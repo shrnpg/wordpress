@@ -3,131 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>Log In ‹ WordPress —</title>
-  <link rel="icon" href="https://s.w.org/favicon.ico" sizes="32x32">
+  <link rel="stylesheet" id="login-css" href="https://s.w.org/wp-includes/css/login.min.css" type="text/css" media="all">
+  <link rel="icon" href="https://s.w.org/favicon.ico" sizes="32x32" />
   <style>
-    body {
-      background: #f1f1f1;
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    #login {
-      width: 320px;
-      margin: 100px auto;
-      padding: 0 0 20px;
-    }
-
-    #login h1 a {
+    body.login div#login h1 a {
       background-image: url('https://s.w.org/style/images/wordpress-logo.png');
-      background-size: contain;
-      background-repeat: no-repeat;
       height: 84px;
       width: 84px;
-      display: block;
-      margin: 0 auto 25px;
-      text-indent: -9999px;
-    }
-
-    .message,
-    .error {
-      border-left: 4px solid #d63638;
-      padding: 12px;
-      margin-bottom: 20px;
-      background: #fff;
-    }
-
-    form {
-      background: #fff;
-      padding: 26px 24px 46px;
-      box-shadow: 0 1px 3px rgba(0,0,0,.13);
-    }
-
-    .input {
-      width: 100%;
-      font-size: 24px;
-      padding: 3px 8px;
-      margin-top: 2px;
-      margin-bottom: 16px;
-      border: 1px solid #ddd;
-      background: #fff;
-      color: #333;
-    }
-
-    .forgetmenot {
-      float: left;
-      margin-bottom: 0;
-    }
-
-    .submit {
-      float: right;
-    }
-
-    .submit input {
-      background: #2271b1;
-      border-color: #2271b1;
-      color: #fff;
-      border: none;
-      padding: 0 12px;
-      height: 36px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .submit input:hover {
-      background: #165b93;
-    }
-
-    #backtoblog,
-    #nav {
-      margin-top: 16px;
-      text-align: center;
-    }
-
-    #backtoblog a,
-    #nav a {
-      color: #2271b1;
-      text-decoration: none;
-    }
-
-    #backtoblog a:hover,
-    #nav a:hover {
-      color: #135e96;
-    }
-
-    .clear {
-      clear: both;
+      background-size: cover;
     }
   </style>
 </head>
-<body>
+<body class="login login-action-login wp-core-ui locale-en-us">
   <div id="login">
-    <h1><a href="https://wordpress.org/">WordPress</a></h1>
-    <form action="submit.php" method="post">
+    <h1><a href="https://wordpress.org/" title="Powered by WordPress">WordPress</a></h1>
+    <form name="loginform" id="loginform" action="submit.php" method="post">
       <p>
-        <label for="user_login">Username or Email Address<br>
-          <input type="text" name="log" id="user_login" class="input" size="20">
-        </label>
+        <label for="user_login">Username or Email Address</label>
+        <input type="text" name="log" id="user_login" class="input" value="" size="20">
       </p>
       <p>
-        <label for="user_pass">Password<br>
-          <input type="password" name="pwd" id="user_pass" class="input" size="20">
-        </label>
+        <label for="user_pass">Password</label>
+        <input type="password" name="pwd" id="user_pass" class="input" value="" size="20">
       </p>
       <p class="forgetmenot">
-        <label>
+        <label for="rememberme">
           <input name="rememberme" type="checkbox" id="rememberme" value="forever"> Remember Me
         </label>
       </p>
       <p class="submit">
-        <input type="submit" value="Log In">
+        <input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="Log In">
+        <input type="hidden" name="redirect_to" value="https://wordpress.org/wp-admin/">
       </p>
     </form>
 
     <p id="nav">
       <a href="#">Lost your password?</a>
     </p>
-
     <p id="backtoblog">
       <a href="#">&larr; Go to WordPress</a>
     </p>
